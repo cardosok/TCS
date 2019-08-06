@@ -12,6 +12,8 @@ public class MergeSort {
     
     static int vetor[] = {12,11,13,5,6,7,9,50};
     static final int TAMANHO = 8; 
+    
+    
     public static void main(String[] args) {
         System.out.println("Array de entrada");
         printArray(vetor,8);
