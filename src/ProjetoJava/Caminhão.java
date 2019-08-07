@@ -9,27 +9,13 @@ package ProjetoJava;
  *
  * @author senai
  */
-public class Caminhão extends Automovel implements Caracteristicas{
+public class Caminhão extends Automovel{
+    private static final Double CapacidadeMaxima = 40D;
+    private static final String tipoCombutivel = "Disel";
+    private static int quantidadePneus = 4;
     
     int quantidadeEixos;
-    String tipoCombutivel;
 
-    @Override
-    public Double GastarGasolina() {return 0D;}
 
-    @Override
-    public Double Abastecer() {return 0D;}
-
-    @Override
-    public Double Acelerar() {return 0D;}
-
-    @Override
-    public void Ligar() {}
-
-    @Override
-    public void Desligar() {}
-
-    @Override
-    public void TrocarPneu() {}
-   
+    
 }

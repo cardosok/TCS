@@ -10,23 +10,17 @@ package ProjetoJava;
  * @author senai
  */
 public class Carro extends Automovel implements Caracteristicas{
+       
+    private static final Double CapacidadeMaxima = 30D;
+    private static final String tipoCombutivel = "Gasolina,Alcool";
+    private static final int quantidadePneus = 4;
     
-    @Override
-    public Double GastarGasolina() {return 0D;}
+       
+    public Carro() {
+    }
 
-    @Override
-    public Double Abastecer() {return 0D;}
-
-    @Override
-    public Double Acelerar() {return 0D;}
-
-    @Override
-    public void Ligar() {}
-
-    @Override
-    public void Desligar() {}
-
-    @Override
-    public void TrocarPneu() {}
-    
+    public Carro(int rodas, Double combustivel, boolean statusMotor, String tipoCombustivel, Double preco, Double capacidadeTanque) {
+        super(rodas, combustivel, statusMotor, tipoCombustivel, preco, capacidadeTanque);
+    }
+      
 }

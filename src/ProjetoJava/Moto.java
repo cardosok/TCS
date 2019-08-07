@@ -9,24 +9,10 @@ package ProjetoJava;
  *
  * @author senai
  */
-public class Moto extends Automovel implements Caracteristicas{
-    
-    @Override
-    public Double GastarGasolina() {return 0D;}
-
-    @Override
-    public Double Abastecer() {return 0D;}
-
-    @Override
-    public Double Acelerar() {return 0D;}
-
-    @Override
-    public void Ligar() {}
-
-    @Override
-    public void Desligar() {}
-
-    @Override
-    public void TrocarPneu() {}
+public class Moto extends Automovel {
+    private static final Double CapacidadeMaxima = 10D;
+    private static final String tipoCombutivel = "Gasolina,Alcool";
+    private static final int quantidadePneus = 2;
+ 
     
 }
