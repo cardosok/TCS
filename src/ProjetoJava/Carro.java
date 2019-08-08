@@ -27,11 +27,11 @@ public class Carro extends Automovel {
     public void TrocarPneu() {
         System.out.println("Digite a quantidade a abastecer");
         Scanner quantidadePneus = new Scanner(System.in);
-        
-        if(Double.parseDouble(quantidadePneus.toString()) > 4){
+        String scan = quantidadePneus.next();
+        if(Double.parseDouble(scan.toString()) > 4){
             System.out.println("Voce não pode trocar essa quantidade de pneus");
         }else{
-            System.out.println("Foram trocados "+ quantidadePneus + "pneus!!!");
+            System.out.println("Foram trocados "+ scan + "pneus!!!");
         }
     }
 
@@ -48,14 +48,17 @@ public class Carro extends Automovel {
     @Override
     public void Abastecer() {
         System.out.println("Digite a quantidade a abastecer");
-        Scanner quantidadeCombustivel = new Scanner(System.in);
-        System.out.println("Digite o tipo de Combustivel");
-        System.out.println("Gasolina");
-        System.out.println("Disel");
-        System.out.println("Alcool");
-        Scanner tipo = new Scanner(System.in);
+        Scanner quantidade = new Scanner(System.in);
+        String scan = quantidade.next();
+        Double quantidadeCombustivel = Double.parseDouble(scan);
+        
+//        System.out.println("Digite o tipo de Combustivel");
+//        System.out.println("Gasolina");
+//        System.out.println("Disel");
+//        System.out.println("Alcool");
+//        Scanner tipo = new Scanner(System.in);
         Double preco = 5D;
-        Double total = Double.parseDouble(quantidadeCombustivel.toString()) + quantidadeCombustivelAtual;
+        Double total = quantidadeCombustivel + quantidadeCombustivelAtual;
         if(total >= capacidadeMaxima){
             System.out.println("O tanque ja esta cheio");
         }else{

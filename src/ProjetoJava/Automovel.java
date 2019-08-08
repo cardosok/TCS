@@ -25,18 +25,19 @@ public abstract class Automovel implements Caracteristicas{
     public void Abastecer(){
         System.out.println("Digite a quantidade a abastecer");
         Scanner quantidadeCombustivel = new Scanner(System.in);
-        System.out.println("Digite o tipo de Combustivel");
-        System.out.println("Gasolina");
-        System.out.println("Disel");
-        System.out.println("Alcool");
-        Scanner tipo = new Scanner(System.in);
+        String scan = quantidadeCombustivel.next();
+//        System.out.println("Digite o tipo de Combustivel");
+//        System.out.println("Gasolina");
+//        System.out.println("Disel");
+//        System.out.println("Alcool");
+//        Scanner tipo = new Scanner(System.in);
         
         Double preco = 1D;
-        Double total = Double.parseDouble(quantidadeCombustivel.toString()) + combustivel;
+        Double total = Double.parseDouble(scan.toString()) + combustivel;
         if(total >= capacidadeTanque){
             System.out.println("O tanque ja esta cheio");
         }else{
-            Double valorAbastecido = preco * Double.parseDouble(quantidadeCombustivel.toString()); 
+            Double valorAbastecido = preco * Double.parseDouble(scan.toString()); 
             combustivel = combustivel + total;        
             System.out.println("O valor gasto do combustivel foi: "+ valorAbastecido);
         }
@@ -44,11 +45,15 @@ public abstract class Automovel implements Caracteristicas{
 
     @Override
     public void Acelerar() {
-        if(capacidadeTanque <= 0){
-            System.out.println("Seu tanque esta Vazio Abasteça para poder rodar");
+        if(statusMotor){
+            if(capacidadeTanque <= 0){
+                System.out.println("Seu tanque esta Vazio Abasteça para poder rodar");
+            }else{
+                System.out.println("Acelerando");
+                combustivel -= 10;    
+            }
         }else{
-            System.out.println("Acelerando");
-            combustivel -= 10;    
+            System.out.println("Ligue o carro");
         }
     }
 

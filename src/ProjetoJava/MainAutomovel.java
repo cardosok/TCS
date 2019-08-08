@@ -25,44 +25,51 @@ public class MainAutomovel {
             System.out.println("/-----------------------------------------------/");
             Scanner scanner = new Scanner(System.in);
             
-            switch(scanner.next()){
-                case "0":
-                    Automovel carro = new Carro();
-                while (car != 0) {                        
-                    System.out.println("/-----------------------------------------------/");
-                    System.out.println("O que dejesa fazer");
-                    System.out.println("1 - Acelerar");
-                    System.out.println("2 - Abastecer");
-                    System.out.println("3 - Trocar Pneu");
-                    System.out.println("4 - Ligar");
-                    System.out.println("5 - Desligar");
-                    System.out.println("0 - Sair");
-                    System.out.println("/-----------------------------------------------/");
-                    
-                    Scanner scanCar = new Scanner(System.in);
-                    
-                    switch(scanCar.next()){
-                        case "1":
-                            carro.Acelerar();
-                            break;
-                        case "2":
-                            carro.Abastecer();
-                            break;
-                        case "3":
-                            break;
-                        case "4":
-                            break;
-                        case "5":
-                            break;
-                        case "0":
-                            break;
-                    }
-                    
-                }
-                    break;
+            switch(scanner.next().toString()){
                 case "1":
+                    Automovel carro = new Carro();
+                    while (car != 0) {                        
+                        System.out.println("/-----------------------------------------------/");
+                        System.out.println("O que dejesa fazer");
+                        System.out.println("1 - Acelerar");
+                        System.out.println("2 - Abastecer");
+                        System.out.println("3 - Trocar Pneu");
+                        System.out.println("4 - Ligar");
+                        System.out.println("5 - Desligar");
+                        System.out.println("0 - Sair");
+                        System.out.println("/-----------------------------------------------/");
+
+                        Scanner scanCar = new Scanner(System.in);
+
+                        switch(scanCar.next()){
+                            case "1":
+                                carro.Acelerar();
+                                break;
+                            case "2":
+                                carro.Abastecer();
+                                break;
+                            case "3":
+                                carro.TrocarPneu();
+                                break;
+                            case "4":
+                                carro.Ligar();
+                                break;
+                            case "5":
+                                carro.Desligar();
+                                break;
+                            case "0":
+                                car = 0;
+                                break;
+                        }
+
+                    }
                     break;
                 case "2":
+                    break;
+                case "3":
+                    break;
+                case "0":
+                    menu =0;
                     break;
             }
             
