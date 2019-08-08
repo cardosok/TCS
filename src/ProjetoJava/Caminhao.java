@@ -6,22 +6,23 @@ import java.util.Scanner;
  *
  * @author senai
  */
-public class Moto extends Automovel {
-    private static final Double capacidadeMaxima = 10D;
-    private static final String tipoCombutivel = "Gasolina,Alcool";
+public class Caminhao extends Automovel{
+    private static final Double capacidadeMaxima = 50D;
+    private static final String tipoCombutivel = "Disel";
     Double quantidadeCombustivelAtual;
-    
-    public Moto() {
+    int quantidadeEixos;
+
+    public Caminhao() {
         super(4,tipoCombutivel,capacidadeMaxima);        
         quantidadeCombustivelAtual = 0D;
     }
- 
+
     @Override
     public void TrocarPneu() {
         System.out.println("Digite a quantidade a abastecer");
         Scanner quantidadePneus = new Scanner(System.in);
         
-        if(Double.parseDouble(quantidadePneus.toString())  > 2){
+        if(Double.parseDouble(quantidadePneus.toString()) > 6){
             System.out.println("Voce não pode trocar essa quantidade de pneus");
         }else{
             System.out.println("Foram trocados "+ quantidadePneus + "pneus!!!");
@@ -34,7 +35,7 @@ public class Moto extends Automovel {
             System.out.println("Seu tanque esta Vazio Abasteça para poder rodar");
         }else{
             System.out.println("Acelerando");
-            quantidadeCombustivelAtual -= 1;    
+            quantidadeCombustivelAtual -= 10;    
         }
     }
 
@@ -47,7 +48,7 @@ public class Moto extends Automovel {
         System.out.println("Disel");
         System.out.println("Alcool");
         Scanner tipo = new Scanner(System.in);
-        Double preco = 3.5D;
+        Double preco = 5D;
         Double total = Double.parseDouble(quantidadeCombustivel.toString()) + quantidadeCombustivelAtual;
         if(total >= capacidadeMaxima){
             System.out.println("O tanque ja esta cheio");
@@ -57,5 +58,9 @@ public class Moto extends Automovel {
             System.out.println("O valor gasto do combustivel foi: "+ valorAbastecido);
         }
     }
+    
+    
+
+
     
 }

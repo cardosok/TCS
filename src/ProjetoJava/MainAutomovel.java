@@ -1,25 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ProjetoJava;
 
+import java.util.Scanner;
 /**
- *
- * @author senai
+ * @author César Augusto da Silva Cardoso
  */
 public class MainAutomovel {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Carro car = new Carro();
-        
-        car.Abastecer(12D, "Gasolina");
-        
+    public static void main(String[] args) {       
+        int menu = -1;
+        int car = -1; 
+        int cami = -1; 
+        int mot = -1; 
+        while (menu != 0) {
+            System.out.println("/-----------------------------------------------/");
+            System.out.println("Digite o tipo de Veiculo:");
+            System.out.println("1 - Carro");
+            System.out.println("2 - Caminhão");
+            System.out.println("3 - Moto");
+            System.out.println("0 - Sair");
+            System.out.println("/-----------------------------------------------/");
+            Scanner scanner = new Scanner(System.in);
+            
+            switch(scanner.next()){
+                case "0":
+                    Automovel carro = new Carro();
+                while (car != 0) {                        
+                    System.out.println("/-----------------------------------------------/");
+                    System.out.println("O que dejesa fazer");
+                    System.out.println("1 - Acelerar");
+                    System.out.println("2 - Abastecer");
+                    System.out.println("3 - Trocar Pneu");
+                    System.out.println("4 - Ligar");
+                    System.out.println("5 - Desligar");
+                    System.out.println("0 - Sair");
+                    System.out.println("/-----------------------------------------------/");
+                    
+                    Scanner scanCar = new Scanner(System.in);
+                    
+                    switch(scanCar.next()){
+                        case "1":
+                            carro.Acelerar();
+                            break;
+                        case "2":
+                            carro.Abastecer();
+                            break;
+                        case "3":
+                            break;
+                        case "4":
+                            break;
+                        case "5":
+                            break;
+                        case "0":
+                            break;
+                    }
+                    
+                }
+                    break;
+                case "1":
+                    break;
+                case "2":
+                    break;
+            }
+            
+        }
+                
     }
     
 }

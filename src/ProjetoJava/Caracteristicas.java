@@ -10,9 +10,10 @@ package ProjetoJava;
  * @author senai
  */
 public interface Caracteristicas {
-    void Abastecer(Double quantidadeGasolina,String tipoGasolina);
+    void Abastecer();
     void Acelerar();
     void Ligar();
     void Desligar();
-    void TrocarPneu(int quantidadePneus);
+    void TrocarPneu();
+    void frear();
 }

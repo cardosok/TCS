@@ -1,5 +1,6 @@
-
 package ProjetoJava;
+
+import java.util.Scanner;
 
 /**
  * @author César Augusto da Silva Cardoso
@@ -9,31 +10,35 @@ public abstract class Automovel implements Caracteristicas{
     private Double combustivel;
     private boolean statusMotor;
     private String tipoCombustivel;
-    private Double preco;
     private Double capacidadeTanque;
 
     
-    public Automovel() {
-    }
-
-    public Automovel(int rodas, Double combustivel, boolean statusMotor, String tipoCombustivel, Double preco, Double capacidadeTanque) {
+    public Automovel(int rodas,String tipoCombustivel,Double capacidadeMaxima) {
         this.rodas = rodas;
-        this.combustivel = combustivel;
-        this.statusMotor = statusMotor;
         this.tipoCombustivel = tipoCombustivel;
-        this.preco = preco;
-        this.capacidadeTanque = capacidadeTanque;
+        this.capacidadeTanque = capacidadeMaxima;
+        this.combustivel = 0D ;
+        this.statusMotor = false;
     }
     
     @Override
-    public void Abastecer(Double quantidadeCombustivel, String tipoCombustivel) {
-        Double total = quantidadeCombustivel + combustivel;
+    public void Abastecer(){
+        System.out.println("Digite a quantidade a abastecer");
+        Scanner quantidadeCombustivel = new Scanner(System.in);
+        System.out.println("Digite o tipo de Combustivel");
+        System.out.println("Gasolina");
+        System.out.println("Disel");
+        System.out.println("Alcool");
+        Scanner tipo = new Scanner(System.in);
+        
+        Double preco = 1D;
+        Double total = Double.parseDouble(quantidadeCombustivel.toString()) + combustivel;
         if(total >= capacidadeTanque){
             System.out.println("O tanque ja esta cheio");
         }else{
-            Double valorAbastecido = preco * quantidadeCombustivel; 
-            combustivel = combustivel + total;
-            
+            Double valorAbastecido = preco * Double.parseDouble(quantidadeCombustivel.toString()); 
+            combustivel = combustivel + total;        
+            System.out.println("O valor gasto do combustivel foi: "+ valorAbastecido);
         }
     }
 
@@ -45,8 +50,6 @@ public abstract class Automovel implements Caracteristicas{
             System.out.println("Acelerando");
             combustivel -= 10;    
         }
-        
-        
     }
 
     @Override
@@ -72,21 +75,17 @@ public abstract class Automovel implements Caracteristicas{
     }
 
     @Override
-    public void TrocarPneu(int quantidadePneus) {
-        System.out.println("Voce esta trocando "+quantidadePneus+" Pneus!!!");
-    }
-    
-    
-    
-
-    public Double getPreco() {
-        return preco;
+    public void TrocarPneu() {
+        System.out.println("Voce esta trocando Pneus!!!");
     }
 
-    public void setPreco(Double preco) {
-        this.preco = preco;
+    @Override
+    public void frear() {
+            System.out.println("Freiando!!!");
     }
-
+    
+        
+  
     public int getRodas() {
         return rodas;
     }
